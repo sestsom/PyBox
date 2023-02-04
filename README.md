@@ -1,4 +1,4 @@
 # PyBox
 PyBox is like a box of chocolates.
 
-Python playground.
+Playing around with ideas.
