@@ -14,4 +14,7 @@ Nyckelord ändras:
 - [ ] Gör skripten trådade för parallell hantering
 - [ ] Nedladdning av enbart deltat
 - [ ] Slå samman skripten till ett
-- [ ] Börja med jogging
+- [ ] Börja jogga
+
+### Progress vara en nagel i ögat på politiken:
+![](https://geps.dev/progress/10)
