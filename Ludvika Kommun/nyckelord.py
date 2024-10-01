@@ -23,8 +23,9 @@ failed_files = []
 
 #Finputsa för summering
 def format_keyword(keyword):
-    keyword = keyword.replace(r'(t)?', 't')  # Byter ut (t)? mot t
-    keyword = keyword.replace(r'(en)?', 'en')  # Byter ut (en)? mot en
+    keyword = keyword.replace(r'(t)?', 't')
+    keyword = keyword.replace(r'(en)?', 'en')
+    #keyword = keyword.replace(r'(de)?', 'de')
     return keyword
 
 #Söka nyckelord i en pdf filer
