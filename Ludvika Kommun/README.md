@@ -8,4 +8,4 @@ Nyckelord ändras:
 `keywords = [r'Guldläge(t)?', r'Sporthall(en)?', r'Idrottshall(en)?', 'Neuropsykiatrisk', 'NPF', 'Koordinator', 'Detaljplan', 'Hillängen', 'Granat']`
 
 ### Exempel på summering:
-<img src="Exempel 01.png" width="50%"><img src="Exempel 02.png">
+<img src="Exempel 01.png" width="50%"><img src="Exempel 02.png" width="50%">
