@@ -9,3 +9,6 @@ Nyckelord ändras:
 
 ### Exempel på summering:
 <img src="Exempel 01.png" width="50%"><img src="Exempel 02.png" width="50%">
+
+### Att göra:
+- [ ] Gör skripten trådade för paralell hantering
