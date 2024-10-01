@@ -32,7 +32,7 @@ base_urls = {
 }
 
 #Intressant filformat
-file_types = [".pdf", ".doc", ".docx", ".xls", ".xlsx", ".pptx"]
+file_types = [".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".vsd", ".vsdx"]
 
 #Ladda ner filerna
 def download_file(url, folder_name):
