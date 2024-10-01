@@ -8,9 +8,9 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, unquote
 import sys
 
-# URL'er
+#URL'er
 base_urls = {
-    #"Ludvika.se": "https://www.ludvika.se", från början var det tänkt att damsuga allt..
+    #"Ludvika.se": "https://www.ludvika.se", från början var det tänkt att damsuga allt. Kanske inte så bra ide :-)
     "Kommunfullmäktige": "https://www.ludvika.se/kommun-och-politik/politik-och-demokrati/moten-och-protokoll/kommunfullmaktige/kommunfullmaktige-kf",
     "Kommunstyrelsen": "https://www.ludvika.se/kommun-och-politik/politik-och-demokrati/moten-och-protokoll/kommunstyrelsen/kommunstyrelsen-ks",
     "Kommunstyrelsens Finansutskott": "https://www.ludvika.se/kommun-och-politik/politik-och-demokrati/moten-och-protokoll/kommunstyrelsen/kommunstyrelsens-arbetsutskott-ks-au",
@@ -31,16 +31,16 @@ base_urls = {
     "Ludvika kommun stadshus AB": "https://www.ludvika.se/kommun-och-politik/politik-och-demokrati/moten-och-protokoll/ludvika-kommun-stadshus-ab-lksab",
 }
 
-# Intressant filformat
-file_types = [".pdf", ".doc", ".docx", ".xls", ".xlsx"]
+#Intressant filformat
+file_types = [".pdf", ".doc", ".docx", ".xls", ".xlsx", ".pptx"]
 
-# Ladda ner filerna
+#Ladda ner filerna
 def download_file(url, folder_name):
     download_folder = os.path.join("filer", folder_name)
     if not os.path.exists(download_folder):
         os.makedirs(download_folder)
 
-    # Unquote ¤#!%
+    #Unquote ¤#!%
     local_filename = os.path.join(download_folder, unquote(os.path.basename(urlparse(url).path)))
     try:
         with requests.get(url, stream=True) as r:
@@ -52,7 +52,7 @@ def download_file(url, folder_name):
     except Exception as e:
         print(f"Misslyckades med att ladda ner {url}: {e}")
 
-# Länkar
+#Länkar
 def get_links(url):
     try:
         response = requests.get(url)
@@ -62,7 +62,7 @@ def get_links(url):
         print(f"Misslyckades med att hämta länkar från {url}: {e}")
         return []
 
-# Sök igenom rekursivt
+#Sök igenom rekursivt
 def crawl_website(base_url, folder_name, visited=set()):
     try:
         if base_url in visited:
@@ -73,18 +73,18 @@ def crawl_website(base_url, folder_name, visited=set()):
 
         links = get_links(base_url)
         for link in links:
-            # Ladda ner filformaten där uppe
+            #Ladda ner filformaten där uppe
             if any(link.endswith(file_type) for file_type in file_types):
                 print(f"Hittade fil: {link}")
                 download_file(link, folder_name)
-            # Leta vidare
+            #Leta vidare
             elif base_url in link:
                 crawl_website(link, folder_name, visited)
     except KeyboardInterrupt:
         print("\nProcessen avbruten.")
         sys.exit(0)
 
-# Start
+#Start
 for folder_name, base_url in base_urls.items():
     print(f"\nLetar igenom: {folder_name} - {base_url}")
     crawl_website(base_url, folder_name)
