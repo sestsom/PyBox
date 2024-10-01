@@ -4,6 +4,7 @@
 ### **Nyckelord** söker igenom filerna nedladdade med Sluk efter nyckelord och summerar med en html sida.
 
 Nyckelord ändras:
+
 `keywords = [r'Guldläge(t)?', r'Sporthall(en)?', r'Idrottshall(en)?', 'Neuropsykiatrisk', 'NPF', 'Koordinator', 'Detaljplan', 'Hillängen', 'Granat']`
 
 <img src="Exempel 01.png"><img src="Exempel 02.png">
