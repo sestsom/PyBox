@@ -17,4 +17,4 @@ Nyckelord ändras:
 - [ ] Börja jogga
 
 ### Progress vara en nagel i ögat på politiken:
-![](https://geps.dev/progress/10)
+![](https://geps.dev/progress/12)
